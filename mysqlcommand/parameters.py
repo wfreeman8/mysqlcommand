@@ -37,7 +37,7 @@ class Parameters:
   def value(self, name: str):
     if re.match(self.__PARAMETER_EXPRESSION, name) and self.contains(name):
       if isinstance(self.__parameters[name], datetime):
-        return self.__parameters[name].strftime('%Y-%m-%D %H:%M:%S')
+        return self.__parameters[name].strftime('%Y-%m-%d %H:%M:%S')
       elif isinstance(self.__parameters[name], date):
         return self.__parameters[name].isoformat()
       elif isinstance(self.__parameters[name], time):

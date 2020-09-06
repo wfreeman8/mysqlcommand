@@ -276,7 +276,8 @@ class MysqlCommand:
 
   def __validate_database_connection(
     self, dbcon: mysql.connector.MySQLConnection):
-    if (not isinstance(dbcon, mysql.connector.MySQLConnection)
+    if ((not isinstance(dbcon, mysql.connector.MySQLConnection)
+        and not isinstance(dbcon, mysql.connector.CMySQLConnnection))
       or not dbcon.is_connected()):
       raise Exception('Database connection must be an open MySQLConnection')
 
